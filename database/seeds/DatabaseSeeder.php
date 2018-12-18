@@ -1,16 +1,13 @@
 <?php
 
-use Illuminate\Database\Seeder;
+use ActivismBe\Seeders\DatabaseSeeder as Seeder;
+use ActivismBe\Seeders\AclTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        // $this->call(UsersTableSeeder::class);
+        parent::run();
+        $this->call(AclTableSeeder::class); // Seeder that handles users and ACL.
     }
 }
