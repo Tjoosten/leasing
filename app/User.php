@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -39,5 +40,16 @@ class User extends Authenticatable
     public function setPasswordAttribute(string $password): void 
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * Get all the users that are registered on the current day.
+     *
+     * @param  Builder $query The Eloquent ORm query builder instance. 
+     * @return Builder
+     */
+    public function scopeRegisteredToday($query): Builder
+    {
+        return $query->whereDate('created_at', now()->today());
     }
 }

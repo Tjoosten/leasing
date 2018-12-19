@@ -1,3 +1,32 @@
+// Footer partial
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; // Set the fixed height of the footer here
+  line-height: 60px; // Vertically center the text there
+  background-color: $sgv-brown;
+}
+
+.copyright {
+  color: $white;
+}
+
+.link-footer {
+  color: $white;
+}
+
+.link-footer:hover, 
+.link-footer:focus {
+  color: $sgv-green;
+  text-decoration: none;
+}
+
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
@@ -5,6 +34,7 @@ body {
 
 body {
   padding-top: 56px;
+  margin-bottom: 60px; // Margin bottom by footer height
 }
 
 @media (max-width: 991.98px) {

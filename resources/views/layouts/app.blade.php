@@ -37,6 +37,15 @@
 
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <i class="fe fe-bell"></i>
+
+                                    <span style="margin-top: -.25rem;" class="badge align-middle badge-pill badge-notifications">
+                                        {{ Auth::user()->unreadNotifications->count() }}
+                                    </span>
+                                </a>
+                        
+                        <li class="nav-item">
                             <a href="{{ route('account.settings') }}" class="nav-link">
                                 {{ Auth::user()->name }} 
                             </a>
@@ -67,12 +76,26 @@
                             Kalender
                         </a>
                       
-                        <a href="" class="nav-link"><i class="fe mr-1 fe-users"></i> Gebruikers</a>
+                        <a href="" class="nav-link">
+                            <i class="fe mr-1 fe-users"></i> Admins
+                        </a>
+
+                        <a href="" class="nav-link">
+                            <i class="fe mr-1 fe-users"></i> Huurders
+                        </a>
                         
                         <a href="" class="nav-link">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
+
+                        <a href="" class="nav-link">
+                            <i class="fe fe-bar-chart"></i> Financiën
+                        </a>
                     @endif
+
+                    <a href="" class="nav-link">
+                        <i class="fe mr-1 fe-help-circle"></i> Helpdesk
+                    </a>
                 </nav>
             </div>
 
@@ -81,6 +104,17 @@
                     @yield('content')
                 </div>
             </main>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <span class="copyright"><i class="far fa-copyright"></i> {{ date('Y') }}, {{ config('app.name') }}</span>
+
+                    <div class="float-right">
+                        <a href="" class="mr-2 link-footer">Privacy</a>
+                        <a href="" class="link-footer">Terms of Service</a>
+                    </div>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

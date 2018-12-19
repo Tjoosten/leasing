@@ -39,3 +39,7 @@ display: flex;
 -ms-flex-direction: column;
 flex-direction: column;
 }
+
+.badge-notifications {
+  @include badge-variant($sgv-green);
+}

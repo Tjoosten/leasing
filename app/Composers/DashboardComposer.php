@@ -15,6 +15,12 @@ class DashboardComposer
     /** @var \App\User $user */
     protected $users; 
 
+    /**
+     * DashboardComposer constructor 
+     * 
+     * @param  User $user The model instance for the users database entity
+     * @return void
+     */
     public function __construct(User $users) 
     {
         $this->users = $users;
