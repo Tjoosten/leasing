@@ -22,7 +22,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'last_login_at', 'last_login_ip'];
+    protected $fillable = ['name', 'email', 'password', 'telephone_number', 'last_login_at', 'last_login_ip'];
 
     /**
      * The attributes that should be mutated to dates.

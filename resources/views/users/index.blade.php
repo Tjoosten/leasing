@@ -51,7 +51,7 @@
                             <td>{{ $user->name }}</td>
                             <td></td>
                             <td>{{ $user->email }}</td>
-                            <td></td>
+                            <td>{{ $user->telephone_number   ? $user->telephone_number : '-' }}</td>
                             <td>{{ $user->last_login_at ? $user->last_login_at->diffForHumans() : '-' }}</td>
                             <td>{{ $user->created_at->format('d/m/Y') }}</td>
                         </tr>
