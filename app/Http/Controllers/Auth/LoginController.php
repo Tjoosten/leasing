@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -35,5 +36,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function authenticated(Request $request, $user)
+    {
+        $user->update([
+            'last_login_at' => now()->toDateTimeString(), 'last_login_ip' => $request->getClientIp()
+        ]);
     }
 }

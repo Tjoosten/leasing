@@ -76,8 +76,8 @@
                             Kalender
                         </a>
                       
-                        <a href="" class="nav-link">
-                            <i class="fe mr-1 fe-users"></i> Admins
+                        <a href="{{ route('admins.index') }}" class="nav-link">
+                            <i class="fe mr-1 fe-users"></i> Admins & Leiding
                         </a>
 
                         <a href="" class="nav-link">

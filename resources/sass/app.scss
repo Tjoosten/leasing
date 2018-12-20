@@ -11,6 +11,7 @@
 @import '_partials/icons';
 @import '_partials/backgrounds';
 @import '_partials/text';
+@import '_partials/page-header';
 
 // Stamp partial 
 .stamp {
@@ -42,4 +43,8 @@ flex-direction: column;
 
 .badge-notifications {
   @include badge-variant($sgv-green);
+}
+
+.btn-sgv-green {
+  @include button-variant($sgv-green-dark, $sgv-green-dark);
 }
