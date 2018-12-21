@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Administrator routes
 Route::get('admins', 'Users\AdminController@index')->name('admins.index');
+Route::match(['get', 'delete'], 'admins/delete/{admin}', 'Users\AdminController@destroy')->name('admins.destroy');
 
 // Account settings routes 
 Route::get('/account-settings', 'Users\SettingsController@index')->name('account.settings');

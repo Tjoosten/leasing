@@ -11683,6 +11683,10 @@ a.text-sgv-green-dark:focus {
   color: #53651b !important;
 }
 
+.no-underline:hover {
+  text-decoration: none;
+}
+
 .page-header {
   display: -ms-flexbox;
   display: -webkit-box;

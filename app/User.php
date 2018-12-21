@@ -2,10 +2,10 @@
 
 namespace App;
 
+use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -13,7 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
  *
  * @package App
  */
-class User extends Authenticatable
+class User extends UserRepository
 {
     use Notifiable, HasRoles;
 

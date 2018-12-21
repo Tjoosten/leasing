@@ -87,20 +87,12 @@
                         <a href="" class="nav-link">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
-
-                        <a href="" class="nav-link">
-                            <i class="fe fe-bar-chart"></i> Financiën
-                        </a>
                     @endif
-
-                    <a href="" class="nav-link">
-                        <i class="fe mr-1 fe-help-circle"></i> Helpdesk
-                    </a>
                 </nav>
             </div>
 
             <main role="main" class="container-fluid">
-                <div class="py-4">
+                <div class="py-3">
                     @yield('content')
                 </div>
             </main>

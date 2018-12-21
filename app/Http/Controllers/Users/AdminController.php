@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Http\Request;
+use Gate;
+use Illuminate\Http\{Request, RedirectResponse};
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
+use Mpociot\Reanimate\ReanimateModels;
 use App\User;
 
 /**
@@ -14,6 +16,8 @@ use App\User;
  */
 class AdminController extends Controller
 {
+    use ReanimateModels;
+
     /**
      * AdminController constructor 
      * 
@@ -35,5 +39,39 @@ class AdminController extends Controller
     {
         $users = $users->role(['admin', 'leiding'])->simplePaginate();
         return view('users.index', compact('users'));
+    }
+
+    /**
+     * Method for deleting admin users in the application.
+     * 
+     * @param  Request $request  The form request instance that holds all the request information. 
+     * @param  User    $admin    The resource entity form the given administrator.  
+     * @return View|RedirectResponse
+     */
+    public function destroy(Request $request, User $admin)
+    {
+        if ($request->isMethod('GET')) {
+            $viewPath = (Gate::allows('same-user', $admin)) ? 'users.settings.delete' : 'users.delete';
+            return view($viewPath, compact('admin'));
+        }
+
+        // Method is a DELETE request so move on with the logic.
+        $this->validate($request, ['confirmation' => 'required']); 
+        $admin->deleteUserAccount($request);
+
+        return redirect()->route('admins.index');
+    }
+
+    /**
+     * Undo the delete for the user in the application.
+     * 
+     * @throws \Exception instance of ModelNotFoundException when no valid user entity is found.
+     * 
+     * @param  int $admin The unique resource entity identifier from the admin.
+     * @return RedirectResponse
+     */
+    public function undeoDeleteRoute(int $admin): RedirectResponse 
+    {
+        $user = User::onlyTrashed()->findOrFail($admin);
     }
 }

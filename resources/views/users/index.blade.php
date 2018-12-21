@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="card card-body shadow-sm py-3">
+    <div class="card card-body shadow-sm mb-3 py-3">
         @include ('flash::message') {{-- Flash session view instance --}}
 
         <div class="table-responsive">
@@ -54,6 +54,14 @@
                             <td>{{ $user->telephone_number   ? $user->telephone_number : '-' }}</td>
                             <td>{{ $user->last_login_at ? $user->last_login_at->diffForHumans() : '-' }}</td>
                             <td>{{ $user->created_at->format('d/m/Y') }}</td>
+
+                            <td> {{-- Options --}}
+                                <span class="float-right">
+                                    <a href="{{ route('admins.destroy', $user) }}" class="text-danger no-underline">
+                                        <i class="mr-1 fe fe-user-x"></i>
+                                    </a>
+                                </span>
+                            </td> {{-- /// Options --}}
                         </tr>
                     @empty 
                     @endforelse

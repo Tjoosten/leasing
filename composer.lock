@@ -4,9 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a3230b8d0698b258495b71af0299d1eb",
-    "content-hash": "a5f855a6e732b8777868f93f58d4e15e",
+    "hash": "411a262d134dbc7013d228fbceecf52c",
+    "content-hash": "775765e1053f770f1438d29d9663c138",
     "packages": [
+        {
+            "name": "activismebe/laravel-form-helpers",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CPSB/Validation-helper.git",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CPSB/Validation-helper/zipball/adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ActivismeBE\\FormHelper\\FormServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ActivismeBE\\FormHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Joosten",
+                    "email": "tim@activisme.be"
+                }
+            ],
+            "description": "Handle form model binding, old input binding and validation error messages in a clean easy way.",
+            "keywords": [
+                "eloquent",
+                "form",
+                "helpers",
+                "html",
+                "input",
+                "laravel",
+                "session",
+                "validation"
+            ],
+            "time": "2017-11-17 23:32:24"
+        },
         {
             "name": "b61/seeders",
             "version": "0.1.4",
@@ -1282,6 +1339,59 @@
                 "psr-3"
             ],
             "time": "2018-11-05 09:00:11"
+        },
+        {
+            "name": "mpociot/reanimate",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpociot/reanimate.git",
+                "reference": "deec27a023f19e86f37454ed50e3faf11f731e22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpociot/reanimate/zipball/deec27a023f19e86f37454ed50e3faf11f731e22",
+                "reference": "deec27a023f19e86f37454ed50e3faf11f731e22",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.*",
+                "illuminate/events": "5.*",
+                "illuminate/http": "5.*",
+                "illuminate/routing": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mpociot\\Reanimate": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "Undo Laravel soft deletes",
+            "homepage": "http://github.com/mpociot/reanimate",
+            "keywords": [
+                "laravel",
+                "model",
+                "restore",
+                "softdelete",
+                "undo"
+            ],
+            "time": "2015-03-18 22:45:13"
         },
         {
             "name": "nesbot/carbon",
