@@ -4,7 +4,8 @@ namespace App\Repositories;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Builder; 
 
 /**
  * Class userRepository 

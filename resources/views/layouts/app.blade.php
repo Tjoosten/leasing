@@ -71,13 +71,15 @@
                     </a>
 
                     @if (Auth::user()->hasRole('admin'))
+                        <a href="{{ route('admins.index') }}" class="nav-link">
+                            <i class="fe mr-1 fe-users"></i> Admins & Leiding
+                        </a>
+                    @endif
+
+                    @if (Auth::user()->hasAnyRole('admin', 'leiding')) 
                         <a href="" class="nav-link">
                             <i class="fe fe-calendar mr-1"></i>
                             Kalender
-                        </a>
-                      
-                        <a href="{{ route('admins.index') }}" class="nav-link">
-                            <i class="fe mr-1 fe-users"></i> Admins & Leiding
                         </a>
 
                         <a href="" class="nav-link">
@@ -87,7 +89,7 @@
                         <a href="" class="nav-link">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
-                    @endif
+                    @endif 
                 </nav>
             </div>
 

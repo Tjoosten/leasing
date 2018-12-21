@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         parent::run();
-        $this->call(SpecificRoleSeeder::class);
         $this->call(AclTableSeeder::class); // Seeder that handles users and ACL.
     }
 }

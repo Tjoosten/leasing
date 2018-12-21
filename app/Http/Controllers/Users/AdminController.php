@@ -32,13 +32,19 @@ class AdminController extends Controller
     /**
      * Method for getting and displaying all the administrators for the application. 
      * 
-     * @param  User $users The database model for the users table. 
+     * @param  Request  $request Request instance that holds all the request data and information.
+     * @param  User     $users   The database model for the users table. 
      * @return View 
      */
-    public function index(User $users): View
+    public function index(Request $request, User $users): View
     {
-        $users = $users->role(['admin', 'leiding'])->simplePaginate();
-        return view('users.index', compact('users'));
+        $baseQuery = $users->role(['leiding', 'admin']);
+
+        switch ($request->filter) {
+            case 'deleted': $baseQuery->onlyTrashed(); break;
+        }
+
+        return view('users.index', ['users' => $baseQuery->simplePaginate()]);
     }
 
     /**

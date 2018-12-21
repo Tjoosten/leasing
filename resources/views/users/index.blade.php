@@ -4,7 +4,12 @@
     <div class="page-header">
         <h1 class="page-title">Administrators & leiding</h1>
 
-        <div class="page-subtitle">Beheerspaneel</div>
+        <div class="page-subtitle">
+            @switch(request()->get('filter'))   
+                @case('deleted')    Verwijderde gebruikers en admins @break     
+                @default            Actieve leiding en admins       
+            @endswitch 
+        </div>
 
             <div class="page-options d-flex">
                 <a href="" class="btn tw-rounded btn-sgv-green mr-2">
@@ -17,8 +22,9 @@
                     </button>
                             
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Non-actieve admins</a>
-                        <a class="dropdown-item" href="">Verwijderde admins</a>
+                        <a class="dropdown-item" href="{{ route('admins.index') }}">Actieve Leiding & admins</a>
+                        <a class="dropdown-item" href="">Non-actieve admins & leiding</a>
+                        <a class="dropdown-item" href="{{ route('admins.index', ['filter' => 'deleted']) }}">Verwijderde admins & leiding</a>
                     </div>
                 </div>
                     
@@ -33,7 +39,7 @@
         @include ('flash::message') {{-- Flash session view instance --}}
 
         <div class="table-responsive">
-            <table class="table table-sm table-hover">
+            <table class="table table-sm @if (count($users)) table-hover @endif mb-1">
                 <thead>
                     <th scope="col" class="border-top-0">#</th>
                     <th scope="col" class="border-top-0">Naam</th>
@@ -49,10 +55,11 @@
                         <tr>
                             <th>#{{$user->id}}</th>
                             <td>{{ $user->name }}</td>
-                            
                             <td> {{-- Status indicators --}}
                                 @switch($user)
-                                    @case($user->trashed()) <span class="badge badge-danger">Verwijderd</td> @break
+                                    @case($user->trashed())  <span class="badge badge-danger">Verwijderd</span>   @break
+                                    @case($user->isOnline()) <span class="badge badge-success">Online</span>      @break
+                                    @default                 <span class="badge badge-danger">Offline</span>      @break
                                 @endswitch
                             </td> {{-- Status indicators --}}
 
