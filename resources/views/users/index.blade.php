@@ -49,7 +49,13 @@
                         <tr>
                             <th>#{{$user->id}}</th>
                             <td>{{ $user->name }}</td>
-                            <td></td>
+                            
+                            <td> {{-- Status indicators --}}
+                                @switch($user)
+                                    @case($user->trashed()) <span class="badge badge-danger">Verwijderd</td> @break
+                                @endswitch
+                            </td> {{-- Status indicators --}}
+
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->telephone_number   ? $user->telephone_number : '-' }}</td>
                             <td>{{ $user->last_login_at ? $user->last_login_at->diffForHumans() : '-' }}</td>
@@ -57,9 +63,15 @@
 
                             <td> {{-- Options --}}
                                 <span class="float-right">
-                                    <a href="{{ route('admins.destroy', $user) }}" class="text-danger no-underline">
-                                        <i class="mr-1 fe fe-user-x"></i>
-                                    </a>
+                                    @if (! $user->trashed()) 
+                                        <a href="{{ route('admins.destroy', $user) }}" class="text-danger no-underline">
+                                            <i class="mr-1 fe fe-user-x"></i>
+                                        </a>
+                                    @else {{-- The user is not soft deleted in the application. --}}
+                                        <a href="{{ route('admins.delete.undo', $user) }}" class="text-success no-underline">
+                                            <i class="mr-1 fe fe-rotate-ccw"></i>
+                                        </a>
+                                    @endif
                                 </span>
                             </td> {{-- /// Options --}}
                         </tr>

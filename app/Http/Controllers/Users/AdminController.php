@@ -70,8 +70,11 @@ class AdminController extends Controller
      * @param  int $admin The unique resource entity identifier from the admin.
      * @return RedirectResponse
      */
-    public function undeoDeleteRoute(int $admin): RedirectResponse 
+    public function undoDeleteRoute(int $admin): RedirectResponse 
     {
         $user = User::onlyTrashed()->findOrFail($admin);
+
+        $this->flashMessage->info("De verwijdering van {$user->name} is ongedaan gemaakt in de applicatie.");
+        return $this->restoreModel($user->id, new User(), 'admins.index');
     }
 }

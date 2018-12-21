@@ -13,17 +13,6 @@ use Illuminate\Support\Facades\Hash;
  */
 class UserRepository extends Authenticatable
 {
-
-    /**
-     * UserRepository constructor 
-     * 
-     * @return void
-     */
-    public function __construct() 
-    {
-        $this->flashMessage = new FlashRepository;
-    }
-
     /**
      * Function for processing deletion requests (users)
      * 
@@ -34,13 +23,15 @@ class UserRepository extends Authenticatable
      */
     public function deleteUserAccount(Request $request): void 
     {
+        $flashMessage = new FlashRepository; 
+
         if ($this->validateRequest($request->confirmation) && $this->delete()) {
             // Confirmation is valid && User has been deleted in the system.
-            $undoLink = '<a href="'. route('admins.delete.undo', $this) .'" class="no-underline">undo</a>';
+            $undoLink = '<a href="'. route('admins.delete.undo', $this) .'" class="ml-2 no-underline">Undo</a>';
 
-            $this->flashMessage->success(__('users.delete.flash.message', ['undo' => $undoLink]))->important();
+            $flashMessage->success("Het account voor {$this->name} is verwijderd uit de applicatie. {$undoLink}")->important();
         } else {
-            $this->flashMessage->warning("Het gebruikers account voor {$this->name} kon niet worden verwijderd.")->important();
+            $flashMessage->warning("Het gebruikers account voor {$this->name} kon niet worden verwijderd.")->important();
         }
     }
 
