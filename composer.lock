@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "411a262d134dbc7013d228fbceecf52c",
-    "content-hash": "775765e1053f770f1438d29d9663c138",
+    "hash": "00d1105e42870fa48172f05c80730548",
+    "content-hash": "013b22ff83c2b7ba3aa4460200f4cea8",
     "packages": [
         {
             "name": "activismebe/laravel-form-helpers",
@@ -63,54 +63,6 @@
                 "validation"
             ],
             "time": "2017-11-17 23:32:24"
-        },
-        {
-            "name": "b61/seeders",
-            "version": "0.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nuclear-campain/Seeders.git",
-                "reference": "f03e655becccec76c4d0efa51ffcdbc472a13668"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nuclear-campain/Seeders/zipball/f03e655becccec76c4d0efa51ffcdbc472a13668",
-                "reference": "f03e655becccec76c4d0efa51ffcdbc472a13668",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "5.*",
-                "illuminate/support": "5.*",
-                "php": "^7.0",
-                "spatie/laravel-permission": "^2.25"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ActivismBe\\Seeders\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Joosten",
-                    "email": "Tim@activisme.be",
-                    "homepage": "https://activisme.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Base seeders for our laravel applications",
-            "homepage": "https://github.com/nuclear-campain/seeders",
-            "keywords": [
-                "b61",
-                "database",
-                "laravel",
-                "seeders"
-            ],
-            "time": "2018-11-17 21:40:10"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -799,16 +751,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.18",
+            "version": "v5.7.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d329797ae0e2ece220d85a5b59ffe659ce2050ae"
+                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d329797ae0e2ece220d85a5b59ffe659ce2050ae",
-                "reference": "d329797ae0e2ece220d85a5b59ffe659ce2050ae",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
+                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
                 "shasum": ""
             },
             "require": {
@@ -941,7 +893,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-12-17 16:47:43"
+            "time": "2018-12-18 14:00:38"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -1453,16 +1405,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.5.2",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542"
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/01809cc1e17a5af275913c49bb5d444eb6cc06d4",
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4",
                 "shasum": ""
             },
             "require": {
@@ -1497,7 +1449,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2018-11-14 14:12:22"
+            "time": "2018-12-17 10:47:50"
         },
         {
             "name": "nikic/php-parser",
