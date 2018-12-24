@@ -48,3 +48,8 @@ flex-direction: column;
 .btn-sgv-green {
   @include button-variant($sgv-green-dark, $sgv-green-dark);
 }
+
+.list-group-item.active {
+  background-color: $sgv-green !important;
+  border-color: darken($sgv-green, 5%);
+}

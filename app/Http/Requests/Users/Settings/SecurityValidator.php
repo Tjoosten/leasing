@@ -4,6 +4,11 @@ namespace App\Http\Requests\Users\Settings;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class SecurityValidator 
+ * 
+ * @package App\Http\Requests\Users\Settings
+ */
 class SecurityValidator extends FormRequest
 {
     /**
@@ -11,9 +16,10 @@ class SecurityValidator extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        // No authorization check needed because this is handled in the controller. 
+        return true;
     }
 
     /**
@@ -21,10 +27,11 @@ class SecurityValidator extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'current_password' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ];
     }
 }

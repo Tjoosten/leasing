@@ -12,7 +12,7 @@
         </div>
 
             <div class="page-options d-flex">
-                <a href="" class="btn tw-rounded btn-sgv-green mr-2">
+                <a href="{{ route('admins.create') }}" class="btn tw-rounded btn-sgv-green mr-2">
                     <i class="fe fe-user-plus"></i>
                 </a>
 

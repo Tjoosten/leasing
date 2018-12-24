@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Spatie\Permission\Models\Role;
 use App\Http\Requests\Users\Settings\{SecurityValidator, InformationValidator};
+use Illuminate\Support\Facades\Hash;
 
 /**
  * Class SettingsController
@@ -35,8 +35,8 @@ class SettingsController extends Controller
      */
     public function index(Request $request): View
     {
-        if ($request->filter === 'information') {
-            return view('users.settings.information', ['roles' => Role::all()]);
+        if ($request->type === 'information') {
+            return view('users.settings.information');
         }
 
         return view('users.settings.security');
@@ -45,13 +45,19 @@ class SettingsController extends Controller
     /**
      * Method or update the security settings from the authenticated user. 
      * 
+     * @todo Implement ->logoutOnOtherDevices(); function
+     * 
      * @param  SecurityValidator $input The form request class that handles the input validation.
      * @return RedirectResponse
      */
     public function updateSecurity(SecurityValidator $input): RedirectResponse
     {
-        if ($this->auth->user()->update($input->all)) {
-            $this->flashMessage->success(__('account.settings.flash-info-update'));
+        $user = $this->auth->user();
+
+        if (Hash::check($input->current_password, $user->getAuthPassword()) && $user->update($input->all())) {
+            $this->flashMessage->success(__('account.settings.flash-info-update'))->important();
+        } else {
+            $this->flashMessage->warning('Wij konden jouw account beveiliging niet aanpassen!')->important();
         }
 
         return redirect()->route('account.settings', ['type' => 'security']);

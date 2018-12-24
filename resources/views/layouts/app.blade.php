@@ -86,7 +86,7 @@
                             <i class="fe mr-1 fe-users"></i> Huurders
                         </a>
                         
-                        <a href="" class="nav-link">
+                        <a href="{{ route('lokalen.index') }}" class="nav-link">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
                     @endif 
@@ -104,8 +104,9 @@
                     <span class="copyright"><i class="far fa-copyright"></i> {{ date('Y') }}, {{ config('app.name') }}</span>
 
                     <div class="float-right">
-                        <a href="" class="mr-2 link-footer">Privacy</a>
-                        <a href="" class="link-footer">Terms of Service</a>
+                        <a href="" class="link-footer">
+                            <i class="fe fe-mr-2 fe-github"></i> Github
+                        </a>
                     </div>
                 </div>
             </footer>

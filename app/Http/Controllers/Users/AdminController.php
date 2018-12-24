@@ -69,6 +69,16 @@ class AdminController extends Controller
     }
 
     /**
+     * Methode voor het creeren van nieuwe leiding of administrators in de applicatie. 
+     * 
+     * @return View
+     */
+    public function create(): View 
+    {
+        return view('users.create');
+    }
+
+    /**
      * Undo the delete for the user in the application.
      * 
      * @throws \Exception instance of ModelNotFoundException when no valid user entity is found.

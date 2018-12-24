@@ -4,6 +4,11 @@ namespace App\Http\Requests\Users\Settings;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class Information Validation
+ * 
+ * @package App\Http\Requests\Users\Settings
+ */
 class InformationValidator extends FormRequest
 {
     /**
@@ -11,9 +16,10 @@ class InformationValidator extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        // No authorization needed because the handling impacts only the authenticated user. 
+        return true;
     }
 
     /**
@@ -21,7 +27,7 @@ class InformationValidator extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             //

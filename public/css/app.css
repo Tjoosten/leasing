@@ -11813,3 +11813,8 @@ a.text-sgv-green-dark:focus {
           box-shadow: 0 0 0 0.2rem rgba(116, 141, 38, 0.5);
 }
 
+.list-group-item.active {
+  background-color: #bdd732 !important;
+  border-color: #afc827;
+}
+
