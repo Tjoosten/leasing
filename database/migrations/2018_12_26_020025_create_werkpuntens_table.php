@@ -19,6 +19,7 @@ class CreateWerkpuntensTable extends Migration
         Schema::create('werkpuntens', function (Blueprint $table): void {
             $table->increments('id');
             $table->unsignedInteger('lokalen_id')->nullable();
+            $table->unsignedInteger('creator_id')->nullable();
             $table->boolean('is_open')->default(true);
             $table->string('title');
             $table->text('extra_informatie')->nullable();
@@ -26,6 +27,7 @@ class CreateWerkpuntensTable extends Migration
 
             // Foreign keys.
             $table->foreign('lokalen_id')->references('id')->on('lokalens')->onDelete('cascade');
+            $table->foreign('creator_id')->references('id')->on('users')->onDelete('SET NULL');
         });
     }
 
