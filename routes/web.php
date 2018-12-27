@@ -35,6 +35,7 @@ Route::get('admins', 'Users\AdminController@index')->name('admins.index');
 Route::match(['get', 'delete'], 'admins/delete/{admin}', 'Users\AdminController@destroy')->name('admins.destroy');
 Route::get('admins/delete/{admin}/undo', 'Users\AdminController@undoDeleteRoute')->name('admins.delete.undo');
 Route::get('admins/nieuw', 'Users\AdminController@create')->name('admins.create');
+Route::post('/admins/nieuw', 'Users\AdminController@store')->name('admins.store');
 
 // Account settings routes 
 Route::get('/account-settings/{type?}', 'Users\SettingsController@index')->name('account.settings');

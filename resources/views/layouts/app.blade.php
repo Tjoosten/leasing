@@ -66,12 +66,12 @@
         
             <div class="nav-scroller bg-green shadow-sm">
                 <nav class="nav nav-underline">
-                    <a class="nav-link active" href="{{ route('home') }}">
+                    <a class="nav-link {{ active('home') }}" href="{{ route('home') }}">
                         <i class="fe fe-home mr-1"></i> Dashboard
                     </a>
 
                     @if (Auth::user()->hasRole('admin'))
-                        <a href="{{ route('admins.index') }}" class="nav-link">
+                        <a href="{{ route('admins.index') }}" class="nav-link {{ active('admins.*') }}">
                             <i class="fe mr-1 fe-users"></i> Admins & Leiding
                         </a>
                     @endif
@@ -86,11 +86,11 @@
                             <i class="fe mr-1 fe-users"></i> Huurders
                         </a>
                         
-                        <a href="{{ route('lokalen.index') }}" class="nav-link">
+                        <a href="{{ route('lokalen.index') }}" class="nav-link {{ active('lokalen.*') }}">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
 
-                        <a href="" class="nav-link">
+                        <a href="" class="nav-link {{ active('werkpunten.*') }}">
                             <i class="fe mr-1 fe-alert-triangle"></i> Werkpunten
                         </a>
                     @endif 
@@ -108,8 +108,12 @@
                     <span class="copyright"><i class="far fa-copyright"></i> {{ date('Y') }}, {{ config('app.name') }}</span>
 
                     <div class="float-right">
+                        <a href="" class="link-footer mr-2">
+                            <i class="fe mr-1 fe-facebook"></i> Facebook
+                        </a>
+
                         <a href="" class="link-footer">
-                            <i class="fe fe-mr-2 fe-github"></i> Github
+                            <i class="fe mr-1 fe-github"></i> Github
                         </a>
                     </div>
                 </div>

@@ -53,3 +53,7 @@ flex-direction: column;
   background-color: $sgv-green !important;
   border-color: darken($sgv-green, 5%);
 }
+
+body.background-frontend {
+    background: #bdd732 url('../img/background.png') no-repeat left top 55px;
+}
