@@ -1,0 +1,6 @@
+@include text-emphasis-variant(".text-sgv-brown", $sgv-brown);
+@include text-emphasis-variant(".text-sgv-green-dark", $sgv-green-dark);
+
+.no-underline:hover {
+    text-decoration: none;
+}

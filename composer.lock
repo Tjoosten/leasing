@@ -4,9 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "721c322be4fe7cd84ab622a501883a54",
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "hash": "00d1105e42870fa48172f05c80730548",
+    "content-hash": "013b22ff83c2b7ba3aa4460200f4cea8",
     "packages": [
+        {
+            "name": "activismebe/laravel-form-helpers",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CPSB/Validation-helper.git",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CPSB/Validation-helper/zipball/adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "reference": "adb91cb42b7e3c1f88be059a8b4f86de5aba64cc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ActivismeBE\\FormHelper\\FormServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ActivismeBE\\FormHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Joosten",
+                    "email": "tim@activisme.be"
+                }
+            ],
+            "description": "Handle form model binding, old input binding and validation error messages in a clean easy way.",
+            "keywords": [
+                "eloquent",
+                "form",
+                "helpers",
+                "html",
+                "input",
+                "laravel",
+                "session",
+                "validation"
+            ],
+            "time": "2017-11-17 23:32:24"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -639,17 +696,71 @@
             "time": "2018-09-29 18:48:56"
         },
         {
-            "name": "laravel/framework",
-            "version": "v5.7.18",
+            "name": "laracasts/flash",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "d329797ae0e2ece220d85a5b59ffe659ce2050ae"
+                "url": "https://github.com/laracasts/flash.git",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d329797ae0e2ece220d85a5b59ffe659ce2050ae",
-                "reference": "d329797ae0e2ece220d85a5b59ffe659ce2050ae",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Laracasts\\Flash": "src/"
+                },
+                "files": [
+                    "src/Laracasts/Flash/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Easy flash notifications",
+            "time": "2017-06-22 19:01:19"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v5.7.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
+                "reference": "5c1d1ec7e8563ea31826fd5eb3f6791acf01160c",
                 "shasum": ""
             },
             "require": {
@@ -782,7 +893,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-12-17 16:47:43"
+            "time": "2018-12-18 14:00:38"
         },
         {
             "name": "laravel/nexmo-notification-channel",
@@ -1182,6 +1293,59 @@
             "time": "2018-11-05 09:00:11"
         },
         {
+            "name": "mpociot/reanimate",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpociot/reanimate.git",
+                "reference": "deec27a023f19e86f37454ed50e3faf11f731e22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpociot/reanimate/zipball/deec27a023f19e86f37454ed50e3faf11f731e22",
+                "reference": "deec27a023f19e86f37454ed50e3faf11f731e22",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.*",
+                "illuminate/events": "5.*",
+                "illuminate/http": "5.*",
+                "illuminate/routing": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mpociot\\Reanimate": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "Undo Laravel soft deletes",
+            "homepage": "http://github.com/mpociot/reanimate",
+            "keywords": [
+                "laravel",
+                "model",
+                "restore",
+                "softdelete",
+                "undo"
+            ],
+            "time": "2015-03-18 22:45:13"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.36.1",
             "source": {
@@ -1241,16 +1405,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.5.2",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542"
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
-                "reference": "f192c84ec3cc3e2657fc754e0da1a17e39ac5542",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/01809cc1e17a5af275913c49bb5d444eb6cc06d4",
+                "reference": "01809cc1e17a5af275913c49bb5d444eb6cc06d4",
                 "shasum": ""
             },
             "require": {
@@ -1285,7 +1449,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2018-11-14 14:12:22"
+            "time": "2018-12-17 10:47:50"
         },
         {
             "name": "nikic/php-parser",
@@ -1999,6 +2163,157 @@
                 "uuid"
             ],
             "time": "2018-07-19 23:38:55"
+        },
+        {
+            "name": "spatie/laravel-blade-x",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-blade-x.git",
+                "reference": "5e5491b1060bdb77c29bc54e87473ef78e36b102"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-blade-x/zipball/5e5491b1060bdb77c29bc54e87473ef78e36b102",
+                "reference": "5e5491b1060bdb77c29bc54e87473ef78e36b102",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/view": "~5.5.0|~5.6.0|~5.7.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "^7.3",
+                "spatie/phpunit-snapshot-assertions": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\BladeX\\BladeXServiceProvider"
+                    ],
+                    "aliases": {
+                        "BladeX": "Spatie\\BladeX\\Facades\\BladeX"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\BladeX\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ruben Van Assche",
+                    "email": "ruben@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Supercharged Blade components",
+            "homepage": "https://github.com/spatie/laravel-blade-x",
+            "keywords": [
+                "blade",
+                "components",
+                "html",
+                "laravel-blade-x",
+                "spatie"
+            ],
+            "time": "2018-10-08 08:15:37"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "2.29.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "7f308806ca051fca42685e4a97a282139a6a7982"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/7f308806ca051fca42685e4a97a282139a6a7982",
+                "reference": "7f308806ca051fca42685e4a97a282139a6a7982",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/container": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/contracts": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "illuminate/database": "~5.4.0|~5.5.0|~5.6.0|~5.7.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.4.2|~3.5.0|~3.6.0|~3.7.0",
+                "phpunit/phpunit": "^5.7|6.2|^7.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 5.4 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "security",
+                "spatie"
+            ],
+            "time": "2018-12-16 00:49:22"
         },
         {
             "name": "swiftmailer/swiftmailer",

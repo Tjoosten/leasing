@@ -9,9 +9,14 @@
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
+        "activismebe/laravel-form-helpers": "^1.2",
         "fideloper/proxy": "^4.0",
+        "laracasts/flash": "^3.0",
         "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "mpociot/reanimate": "^1.0",
+        "spatie/laravel-blade-x": "2.0.0",
+        "spatie/laravel-permission": "^2.29"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

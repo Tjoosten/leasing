@@ -7,8 +7,49 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '_partials/offcanvas';
+@import '_partials/icons';
+@import '_partials/backgrounds';
+@import '_partials/text';
+@import '_partials/page-header';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// Stamp partial 
+.stamp {
+  color: #fff;
+  background: #868e96;
+  display: inline-block;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 .25rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.stamp-md {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.row-cards > .col,
+.row-cards > [class*='col-'] {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-direction: column;
+flex-direction: column;
+}
+
+.badge-notifications {
+  @include badge-variant($sgv-green);
+}
+
+.btn-sgv-green {
+  @include button-variant($sgv-green-dark, $sgv-green-dark);
+}
+
+.list-group-item.active {
+  background-color: $sgv-green !important;
+  border-color: darken($sgv-green, 5%);
 }
