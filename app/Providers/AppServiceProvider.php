@@ -2,9 +2,16 @@
 
 namespace App\Providers;
 
+use App\Models\Werkpunten;
+use App\Observers\WerkpuntObserver;
 use Spatie\BladeX\Facades\BladeX;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class AppServiceProvider
+ *
+ * @package App\Providers
+ */
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -14,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Model observers registration
+        Werkpunten::observe(WerkpuntObserver::class);
+
+        // Blade registrations
         BladeX::component('components.*');
     }
 

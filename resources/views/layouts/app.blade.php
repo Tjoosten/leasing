@@ -89,6 +89,10 @@
                         <a href="{{ route('lokalen.index') }}" class="nav-link">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
+
+                        <a href="" class="nav-link">
+                            <i class="fe mr-1 fe-alert-triangle"></i> Werkpunten
+                        </a>
                     @endif 
                 </nav>
             </div>

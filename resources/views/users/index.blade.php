@@ -47,7 +47,6 @@
                     <th scope="col" class="border-top-0">Email</th>
                     <th scope="col" class="border-top-0">Tel. nummer</th>
                     <th scope="col" class="border-top-0">Laast aangemeld</th>
-                    <th scope="col" class="border-top-0">Registratie datum</th>
                     <th scope="col" class="border-top-0">&nbsp;</th> {{-- Column for the options --}}
                 </thead>
                 <tbody>
@@ -66,7 +65,6 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->telephone_number   ? $user->telephone_number : '-' }}</td>
                             <td>{{ $user->last_login_at ? $user->last_login_at->diffForHumans() : '-' }}</td>
-                            <td>{{ $user->created_at->format('d/m/Y') }}</td>
 
                             <td> {{-- Options --}}
                                 <span class="float-right">

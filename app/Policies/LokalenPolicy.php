@@ -18,8 +18,8 @@ class LokalenPolicy
     /**
      * Determine whether the user can view the lokalen.
      *
-     * @param  User     $user
-     * @param  Lokalen  $lokalen
+     * @param  User     $user       De db entiteit van de aangemelde gebruiker.
+     * @param  Lokalen  $lokalen    De databank entiteit van het gegeven lokaal.
      * @return bool
      */
     public function werkpuntCreatie(User $user, Lokalen $lokalen): bool
