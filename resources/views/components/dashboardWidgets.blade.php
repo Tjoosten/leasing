@@ -1,4 +1,4 @@
-<div class="col-2">
+<div class="col-3">
     <div class="card shadow-sm mb-4 p-2">
         <div class="d-flex align-items-center">
             <span class="stamp stamp-md shadow-sm bg-green-stamp mr-3">
@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="col-2">
+<div class="col-3">
     <div class="card shadow-sm mb-4 p-2">
         <div class="d-flex align-items-center">
             <span class="stamp stamp-md shadow-sm bg-green-stamp mr-3">
@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<div class="col-2">
+<div class="col-3">
     <div class="card shadow-sm mb-4 p-2">
         <div class="d-flex align-items-center">
             <span class="stamp stamp-md shadow-sm bg-green-stamp mr-3">

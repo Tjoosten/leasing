@@ -13,16 +13,16 @@
                     <button type="button" class="btn tw-rounded btn-sgv-green dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fe mr-1 fe-plus-circle"></i> Toevoegen
                     </button>
-                            
+
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ route('lokalen.create') }}">Nieuw lokaal</a>
-                        
+
                         @if (count($lokalen) > 0) {{-- Werkpunten zijn alleen beschikbaar wanneer er een lokaal is --}}
                             <a class="dropdown-item" href="{{ route('werkpunten.create') }}">Nieuw werkpuntje</a>
                         @endif
                     </div>
                 </div>
-                    
+
                 <form method="GET" action="" class="w-100 ml-2">
                     <input type="text" class="form-control" placeholder="Zoek lokaal">
                 </form>
@@ -42,7 +42,6 @@
                         <th scope="col" class="border-top-0">Verantwoordelijke</th>
                         <th scope="col" class="border-top-0">Capaciteit</th>
                         <th scope="col" class="border-top-0">Werkpunten</th>
-                        <th scope="col" class="border-top-0">Registratie datum</th>
                         <th scope="col" class="border-top-0">&nbsp;</th> {{-- Kolom alleen bedoeld voor de functie shortcuts --}}
                     </tr>
                 </thead>
@@ -51,12 +50,12 @@
                         <tr>
                             <th>#{{ $lokaal->id }}</th>
                             <td>{{ $lokaal->name }}</td>
-                            <td>{{ $lokaal->responsible->name }}</td>
+                            <td>{!! $lokaal->responsible->name !!}</td>
                             <td>{{ $lokaal->capacity }} {{ $lokaal->capacity_type}}</td>
 
                             <td> {{-- Werkpunten indicator --}}
                                 <a href="{{ route('werkpunten.index', ['lokaal' => $lokaal, 'status' => 'open']) }}" class="text-success no-underline">
-                                    {{ $lokaal->werkpunten()->isOpen(true)->count() }} Open 
+                                    {{ $lokaal->werkpunten()->isOpen(true)->count() }} Open
                                 </a>
 
                                 <span class="text-secondary px-1">/</span>
@@ -66,8 +65,6 @@
                                 </a>
                             </td> {{-- /// Einde werkpunten indicator --}}
 
-                            <td>{{ $lokaal->created_at->format('d/m/Y H:i:s') }}</td>
-                            
                             <td> {{-- Functie shortcuts --}}
                                 <span class="float-right">
                                     <a href="" class="mr-1 no-underline text-secondary">

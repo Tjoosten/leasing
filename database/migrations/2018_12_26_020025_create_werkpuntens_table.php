@@ -19,14 +19,13 @@ class CreateWerkpuntensTable extends Migration
         Schema::create('werkpuntens', function (Blueprint $table): void {
             $table->increments('id');
             $table->unsignedInteger('lokalen_id')->nullable();
-            $table->foreign('lokalen_id')->references('id')->on('lokalens')->onDelete('cascade');
             $table->boolean('is_open')->default(true);
-            $table->string('title'); 
+            $table->string('title');
             $table->text('extra_informatie')->nullable();
             $table->timestamps();
 
             // Foreign keys.
-            $table->foreign('lokalen_id')->references('id')->on('lokalens')->onDelete('cascade'); 
+            $table->foreign('lokalen_id')->references('id')->on('lokalens')->onDelete('cascade');
         });
     }
 
