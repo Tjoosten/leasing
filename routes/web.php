@@ -19,8 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Werkpunten routes
+Route::get('/werkpunten/{lokaal}/index', 'Lokalen\WerkpuntenController@index')->name('werkpunten.index');
+Route::get('/werkpunten/create', 'Lokalen\WerkpuntenController@create')->name('werkpunten.create');
+Route::post('/werkpunten/create', 'Lokalen\WerkpuntenController@store')->name('werkpunten.store');
+
 // Lokalen routes
 Route::get('/lokalen', 'Lokalen\IndexController@index')->name('lokalen.index');
+Route::get('/lokalen/nieuw', 'Lokalen\IndexController@create')->name('lokalen.create');
+Route::post('/lokalen/nieuw', 'Lokalen\IndexController@store')->name('lokalen.store');
+Route::match(['get', 'delete'], '/lokalen/verwijder/{lokaal}', 'Lokalen\IndexController@destroy')->name('lokalen.delete');
 
 // Administrator routes
 Route::get('admins', 'Users\AdminController@index')->name('admins.index');
