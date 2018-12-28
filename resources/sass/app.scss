@@ -47,6 +47,7 @@ flex-direction: column;
 
 .btn-sgv-green {
   @include button-variant($sgv-green-dark, $sgv-green-dark);
+  white-space: nowrap;
 }
 
 .list-group-item.active {
