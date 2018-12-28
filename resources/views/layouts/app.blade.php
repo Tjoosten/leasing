@@ -66,31 +66,31 @@
         
             <div class="nav-scroller bg-green shadow-sm">
                 <nav class="nav nav-underline">
-                    <a class="nav-link active" href="{{ route('home') }}">
+                    <a class="nav-link {{ active('home') }}" href="{{ route('home') }}">
                         <i class="fe fe-home mr-1"></i> Dashboard
                     </a>
 
                     @if (Auth::user()->hasRole('admin'))
-                        <a href="{{ route('admins.index') }}" class="nav-link">
+                        <a href="{{ route('admins.index') }}" class="nav-link {{ active('admins.*') }}">
                             <i class="fe mr-1 fe-users"></i> Admins & Leiding
                         </a>
                     @endif
 
                     @if (Auth::user()->hasAnyRole('admin', 'leiding')) 
-                        <a href="" class="nav-link">
+                        <a href="" class="nav-link {{ active('calendar.*')  }}">
                             <i class="fe fe-calendar mr-1"></i>
                             Kalender
                         </a>
 
-                        <a href="" class="nav-link">
+                        <a href="" class="nav-link {{ active('huurders.*') }}">
                             <i class="fe mr-1 fe-users"></i> Huurders
                         </a>
                         
-                        <a href="{{ route('lokalen.index') }}" class="nav-link">
+                        <a href="{{ route('lokalen.index') }}" class="nav-link {{ active('lokalen.*') }}">
                             <i class="fe fe-list mr-1"></i> Lokalen
                         </a>
 
-                        <a href="" class="nav-link">
+                        <a href="" class="nav-link {{ active('werkpunten.*') }}">
                             <i class="fe mr-1 fe-alert-triangle"></i> Werkpunten
                         </a>
                     @endif 

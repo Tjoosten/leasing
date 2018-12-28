@@ -2,10 +2,10 @@
     <a href="#" class="list-group-item list-group-item-action disabled">
         <i class="fe fe-list mr-2"></i> Uw instellingen
     </a>
-    <a href="{{ route('account.settings', ['type' => 'information']) }}" class="list-group-item list-group-item-action">
+    <a href="{{ route('account.settings', ['type' => 'information']) }}" class="list-group-item {{ active('account-settings/information') }} list-group-item-action">
         <i class="fe fe-info mr-2"></i> Informatie
     </a>
-    <a href="{{ route('account.settings') }}" class="list-group-item list-group-item-action active">
+    <a href="{{ route('account.settings') }}" class="list-group-item list-group-item-action {{ active('account-settings') }}">
         <i class="fe fe-lock mr-2"></i> Beveiliging
     </a>
 </div>
