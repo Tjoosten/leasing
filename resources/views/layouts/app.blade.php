@@ -108,6 +108,12 @@
                     <span class="copyright"><i class="far fa-copyright"></i> {{ date('Y') }}, {{ config('app.name') }}</span>
 
                     <div class="float-right">
+                        @if (Auth::user()->hasRole('huurder'))
+                            <a href="" class="link-footer">
+                                Gebruikersvoorwaarden
+                            </a>
+                        @endif
+
                         <a href="" class="link-footer">
                             <i class="fe fe-mr-2 fe-github"></i> Github
                         </a>
