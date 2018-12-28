@@ -68,12 +68,6 @@
 
                             <td> {{-- Options --}}
                                 <span class="float-right">
-                                    @if (Auth::user()->hasAnyRole(['admin', 'webmaster']))
-                                        <a href="" class="text-secondary mr-1 no-underline">
-                                            <i class="mr-1 fe fe-eye"></i>
-                                        </a>
-                                    @endif
-
                                     @if (! $user->trashed()) 
                                         <a href="{{ route('admins.destroy', $user) }}" class="text-danger no-underline">
                                             <i class="mr-1 fe fe-user-x"></i>

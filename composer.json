@@ -16,8 +16,7 @@
         "laravel/tinker": "^1.0",
         "mpociot/reanimate": "^1.0",
         "spatie/laravel-blade-x": "2.0.0",
-        "spatie/laravel-permission": "^2.29",
-        "watson/active": "^3.0"
+        "spatie/laravel-permission": "^2.29"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

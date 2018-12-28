@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Http\Requests\Users\CreateValidator;
 use Gate;
 use Illuminate\Http\{Request, RedirectResponse};
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Mpociot\Reanimate\ReanimateModels;
 use App\User;
-use Spatie\Permission\Models\Role;
 
 /**
  * Class AdminController
@@ -28,7 +26,7 @@ class AdminController extends Controller
     public function __construct() 
     {
         parent::__construct(); // Initiate the global constructor
-        $this->middleware(['auth', 'role:admin, webmaster']);
+        $this->middleware(['auth', 'role:admin']);
     }
 
     /**
@@ -51,11 +49,9 @@ class AdminController extends Controller
 
     /**
      * Method for deleting admin users in the application.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     *
-     * @param  Request $request The form request instance that holds all the request information.
-     * @param  User $admin The resource entity form the given administrator.
+     * 
+     * @param  Request $request  The form request instance that holds all the request information. 
+     * @param  User    $admin    The resource entity form the given administrator.  
      * @return View|RedirectResponse
      */
     public function destroy(Request $request, User $admin)
@@ -74,31 +70,12 @@ class AdminController extends Controller
 
     /**
      * Methode voor het creeren van nieuwe leiding of administrators in de applicatie. 
-     *
+     * 
      * @return View
      */
-    public function create(): View
+    public function create(): View 
     {
-        $roles = Role::where('name', '!=', 'huurder')->get();
-        return view('users.create', compact('roles'));
-    }
-
-    /**
-     * Methode voor het opslaan van een nieuw account in de applicatie.
-     *
-     * @see \App\Observers\UserObserver::created()
-     *
-     * @param  CreateValidator $input De validate class dat verantwoordelijk is voor de validatie.
-     * @return RedirectResponse
-     */
-    public function store(CreateValidator $input): RedirectResponse
-    {
-        if ($user = new User($input->all())) {
-            $flashText = "De gebruiker <strong>{$user->name}</strong> is geregisteerd in de applicatie.";
-            $this->flashMessage->success($flashText)->important();
-        }
-
-        return redirect()->route('admins.index');
+        return view('users.create');
     }
 
     /**
