@@ -10469,7 +10469,7 @@ body {
 body.my-login-page {
   font-size: 14px;
   height: 100%;
-  background: #bdd732 url(/images/background.png?dcf194a11299ea804bbbd3e0f8e8865d) no-repeat left top 10px;
+  background: #bdd732 url(/images/background.png?dcf194a11299ea804bbbd3e0f8e8865d) no-repeat left center;
 }
 
 .my-login-page .brand {
