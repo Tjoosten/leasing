@@ -13,14 +13,20 @@
         @csrf {{-- Form filed protection --}}
 
         <div class="form-row">
-            <div class="col">
-                <label for="inputEmail4">Email</label>
+            <div class="col-6">
+                <label for="inputEmail4">Naam van de gebruiker</label>
                 <input type="text" class="form-control" placeholder="First name">
             </div>
     
-            <div class="col">
-                <label for="inputEmail4">Email</label>
+            <div class="col-6">
+                <label for="inputEmail4">Email adres van de gebruiker</label>
                 <input type="text" class="form-control" placeholder="Last name">
+            </div>
+
+            <div class="col-6">
+            </div>
+            
+            <div class="col-6">
             </div>
         </div>
     </form>
