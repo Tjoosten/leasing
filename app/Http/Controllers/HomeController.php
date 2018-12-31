@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
+/**
+ * Class HomeController
+ * 
+ * @package App\Http\Controllers
+ */
 class HomeController extends Controller
 {
     /**
@@ -13,15 +19,28 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest')->only('indexFrontend');
+        $this->middleware('auth')->only('indexBackend');
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Get the welcome page for the application. 
+     * ---- 
+     * User will be redirect to the dashboard if he is authenticated. 
+     * 
+     * @return View
      */
-    public function index()
+    public function indexFrontend(): View
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Show the application his dashboard. 
+     * 
+     * @return View
+     */
+    public function indexBackend(): View
     {
         return view('home');
     }

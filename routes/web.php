@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@indexFrontend')->name('/');
+Route::get('/home', 'HomeController@indexBackend')->name('home');
 
 // Werkpunten routes
 Route::get('/werkpunten/{lokaal}/index', 'Lokalen\WerkpuntenController@index')->name('werkpunten.index');
