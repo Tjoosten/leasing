@@ -75,3 +75,7 @@ body.my-login-page {
     text-align: center;
 }
 
+.btn-sgv-brown{
+    @include button-variant($sgv-brown, $sgv-brown);
+    white-space: nowrap;
+  }
