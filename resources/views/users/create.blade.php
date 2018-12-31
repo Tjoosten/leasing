@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <form action="" method="POST" class="card col-md-9 card-body shadow-sm py-3 mb-3">
+    <form action="" method="POST" class="card col-md-12 card-body shadow-sm py-3 mb-3">
         @csrf {{-- Form filed protection --}}
 
         <div class="form-row">
